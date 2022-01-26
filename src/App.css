@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle&family=Nunito+Sans:wght@700&display=swap');
+
+* {
+    font-family: 'Dongle', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.container {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.box {
+    text-align: center;
+}
