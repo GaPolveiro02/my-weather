@@ -1,20 +1,30 @@
 import { useEffect, useState } from "react";
-
+import './App.css';
 
 function App() {
 
   const [location, setLocation] = useState({})
-  const [weather, setWeather] = useState([])
+  const [weather, setWeather] = useState({})
 
   useEffect(() => {
-    navigator.geolocation.watchPosition(handlePositionReceived)
-  }, []);
+    const obterData = async () => {
+      navigator.geolocation.watchPosition(handlePositionReceived);
 
-  function handlePositionReceived({coords}) {
+      await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${location.latitude}&lon=${location.longitude}&appid=0a2418234df7417984e84ffa6f0fcddf&units=metric&lang=pt_br`)
+        .then(response => response.json())
+        .then(data => {
+          setWeather(data)
+          console.log(data)
+        });
+    }
+    obterData();
+  }, [location.latitude, location.longitude]);
+
+  function handlePositionReceived({ coords }) {
 
     const { latitude, longitude } = coords
-    
-    setLocation({latitude, longitude});
+
+    setLocation({ latitude, longitude });
   }
   
   useEffect(async () => {
