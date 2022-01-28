@@ -3,14 +3,129 @@
 * {
     font-family: 'Dongle', sans-serif;
     font-family: 'Nunito Sans', sans-serif;
+    color: white;
+    
+}
+
+
+
+.App {
+    margin: 0px;
+    height: 100vh;
+    width: 100vw;
+    position:absolute;
+    top:0px;
+    right:0px;
+    bottom:0px;
+    left:0px;
 }
 
 .container {
-    padding: 20px;
+    background-image: url("https://cdnb.artstation.com/p/assets/images/images/006/771/811/large/daka-dibuja-2-media-noche.jpg?1501127210s");
+    height: 100vh;
+    width: 100VW;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .box {
-    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    width: 600px;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 15px;
 }
+
+.main-info {
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0, 0, 0 ,0;
+    
+}
+
+.main-icon {
+    font-size: 70px;
+    padding: 0, 0, 0 ,0;
+}
+
+.main-location {
+    font-size: 50px;
+}
+
+
+.second-info {
+    
+    display: flex;
+    flex-direction: row;
+    padding-left: 50px;
+    padding-top: 0;
+    font-size: 20px;
+    
+}
+
+.s-info  {
+    margin-right: 60px;
+}
+
+@media only screen and (max-width:700px) {
+
+    .container {
+        background-image: url("https://cdnb.artstation.com/p/assets/images/images/006/771/811/large/daka-dibuja-2-media-noche.jpg?1501127210s");
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box {
+        background-color: rgba(255, 255, 255, 0.1);
+        box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+        width: 400px;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        border-radius: 15px;
+    }
+
+    .main-info {
+        font-size: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0, 0, 0 ,0;
+        
+    }
+
+    .main-icon {
+        font-size: 40px;
+        padding: 0, 0, 0 ,0;
+    }
+
+    .main-location {
+        font-size: 25px;
+    }
+
+    .second-info {
+    
+        display: flex;
+        flex-direction: row;
+        padding-left: 20px;
+        padding-top: 0;
+        font-size: 15px;
+        
+    }
+
+    .s-info  {
+        margin-right: 30px;
+    }
+
+}
+
