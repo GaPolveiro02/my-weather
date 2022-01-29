@@ -4,16 +4,13 @@ const WeatherStats = (props) => {
     const weather = props.weather
 
     const round_temps = () => {
-        const max = Math.floor(weather.main.temp_max)
-        const min = Math.floor(weather.main.temp_min)
+        const sensacao = Math.floor(weather.main.feels_like)
         const temp = Math.floor(weather.main.temp)
     
         return (
           <>
-            <span id="temp">{temp}°C</span>
-            <p>
-              <span id="max">Máx: {max}°C</span><span> - </span><span id="min"> Mín: {min}°C</span>
-            </p>
+              <p id="temp">{temp}°C</p>
+              <p id="sensacao">Sensação: {sensacao}°C</p>
           </>
         )
       }

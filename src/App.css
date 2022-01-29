@@ -36,6 +36,7 @@
     align-items: center;
     flex-direction: column;
     border-radius: 15px;
+    backdrop-filter: blur(5px);
 }
 
 .main-info {
@@ -98,12 +99,9 @@
     font-size: 2em;
 }
 
-#max {
-    color:rgb(184, 30, 30);
-}
-
-#min {
-    color: rgb(67, 129, 201);
+#sensacao {
+    font-size: small;
+    font-style: italic;
 }
 
 .space {
@@ -168,4 +166,3 @@
         float: none;
     }
 }
-
