@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { faCloud, faCloudRain, faBolt, faSun } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import WeatherComponent from "./WeatherComponent";
 import './App.css';
+
 
 function App() {
 
@@ -62,60 +62,6 @@ function App() {
 
     setUrl(url);
   }
-  
-  const getWeatherId = () => {
-    const id = weather.weather[0].id
-
-    console.log(id)
-
-    if (id >= 200 && id <= 232) {
-      return (
-        <FontAwesomeIcon icon={faBolt}></FontAwesomeIcon>
-      )
-    }
-    else if (id >= 300 && id <= 531) {
-      return (
-        <FontAwesomeIcon icon={faCloudRain}></FontAwesomeIcon>
-      )
-    }
-    else if (id === 800) {
-      return (
-        <FontAwesomeIcon icon={faSun}></FontAwesomeIcon>
-      )
-    }
-    else if (id >= 801 && id <= 804) {
-      return (
-        <FontAwesomeIcon icon={faCloud}></FontAwesomeIcon>
-      )
-    }
-    else {
-      console.log("deu bom")
-    }
-  }
-
-  const round_temps = () => {
-    const max = Math.floor(weather.main.temp_max)
-    const min = Math.floor(weather.main.temp_min)
-    const temp = Math.floor(weather.main.temp)
-
-    return (
-      <>
-        <span id="temp">{temp}°C</span>
-        <p>
-          <span id="max">Máx: {max}°C</span><span> - </span><span id="min"> Mín: {min}°C</span>
-        </p>
-      </>
-    )
-  }
-
-  const description_upper = () => {
-    let text = weather.weather[0].description
-    text = text[0].toUpperCase() + text.slice(1).toLowerCase()
-
-    return (
-      <>{text}</>
-    )
-  }
 
   return (
     <div className="App">
@@ -125,23 +71,8 @@ function App() {
           <div className="box">
             <p className="main-location"> {weather.name} </p>
             <div className="main-info">
-              <div className="weather">
-                <p className="main-icon">{getWeatherId()}</p>
-                <p id="description"> {description_upper()} </p>
-              </div>
-              <div className="space"></div>
-              <div className="stats">
-                <p id="temps"> {round_temps()} </p>
-                <div className="second-info">
-                  <p className="s-info"> <span>Humidade</span> <span className="value">{weather.main.humidity}% </span></p>
-                  <p className="s-info"> <span>Vento</span> <span className="value">{weather.wind.speed}m/s </span></p>
-                  <p className="s-info"> <span>Pressão</span> <span className="value">{weather.main.pressure}hPa </span></p>
-                </div>
-              </div>
-
+              <WeatherComponent weather={weather}/>
             </div>
-
-
           </div>
         </div>
       ) : (
