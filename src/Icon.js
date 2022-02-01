@@ -4,7 +4,7 @@ const Icon = (props) => {
 
     const id = props.id;
 
-    console.log(props.id)
+    //console.log(props.id)
 
     const getWeatherId = () => {
         
@@ -35,7 +35,7 @@ const Icon = (props) => {
 
 
     return (
-        <p className="main-icon">{getWeatherId()}</p>
+        <>{getWeatherId()}</>
     )
 }
 

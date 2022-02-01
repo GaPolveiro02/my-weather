@@ -17,7 +17,7 @@ const WeatherStats = (props) => {
 
     return (
         <div className="stats">
-                <p id="temps"> {round_temps()} </p>
+                <div id="temps"> {round_temps()} </div>
                 <WeatherInfo weather={weather}/>
               </div>
     )

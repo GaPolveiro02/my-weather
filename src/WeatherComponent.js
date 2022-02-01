@@ -9,7 +9,7 @@ const WeatherComponent = (props) => {
 
     return (
         <><div className="weather">
-            <Icon id={weather.weather[0].id} />
+            <div className="main-icon"><Icon id={weather.weather[0].id} /></div>
             <WeatherDescription weather={weather} />
         </div><div className="space"></div><WeatherStats weather={weather} /></>
     )
