@@ -93,7 +93,7 @@
 }
 
 .space {
-    width: -webkit-fill-available;
+    width: 60px;
 }
 
 .weather-main {
@@ -107,7 +107,7 @@
 
 .weekForecast div {
     margin: 16px;
-    font-size: 1em;
+    font-size: 1.2em;
     display: flex;
     justify-content: center;
     align-items: center;
