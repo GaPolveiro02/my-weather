@@ -1,4 +1,4 @@
-const WeatherDescription = (props) => {
+const Description = (props) => {
 
     const weather = props.weather
 
@@ -16,4 +16,4 @@ const WeatherDescription = (props) => {
     )
 }
 
-export default WeatherDescription
+export default Description

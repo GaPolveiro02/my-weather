@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import './App.css'
 import Icon from "./Icon";
 
-const WeatherWeek = (props) => {
+const Week = (props) => {
 
   const coord = props.coord;
   const [semana, setSemana] = useState({})
@@ -53,4 +52,4 @@ const WeatherWeek = (props) => {
   );
 }
 
-export default WeatherWeek;
+export default Week;
