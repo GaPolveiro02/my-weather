@@ -1,12 +1,12 @@
 import './App.css'
-import LocalForecast from './components/Weather/LocalForecast';
+import Forecast from './components/Weather/Forecast';
 
 
 function App() {
 
   return (
     <div className="App">
-      <LocalForecast/>
+      <Forecast/>
     </div>
   );
 }
