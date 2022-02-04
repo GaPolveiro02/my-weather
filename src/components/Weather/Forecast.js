@@ -18,6 +18,10 @@ function Forecast() {
     setSearch(e.target.value)
   }
 
+  function handleKeyPress(e) {
+    if (e.key === "Enter") citySearch();
+  }
+
   function citySearch() {
 
     //console.log(search)
@@ -78,7 +82,7 @@ function Forecast() {
       <div className="container" style={{ 'backgroundImage': backgroundUrl }}>
         <a href="/"><h1>My Weather</h1></a>
         <div className="search-bar">
-          <input value={search} onChange={(e) => addSearch(e)} placeholder="Pesquise uma cidade"></input>
+          <input value={search} onChange={(e) => addSearch(e)} onKeyPress={(e) => handleKeyPress(e)} placeholder="Pesquise uma cidade"></input>
           <button onClick={citySearch} id="pesquisar">Pesquisar</button>
         </div>
         {(typeof weather.main != 'undefined') ? (

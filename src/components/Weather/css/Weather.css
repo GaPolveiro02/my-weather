@@ -132,7 +132,7 @@
 }
 
 .space {
-    width: -webkit-fill-available;
+    width: 120px;
 }
 
 .weather-main {
