@@ -9,6 +9,33 @@ function LocalForecast() {
   const [location, setLocation] = useState({ latitude: 0, longitude: 0 })
   const [weather, setWeather] = useState({})
   const [backgroundUrl, setUrl] = useState('url("https://cdnb.artstation.com/p/assets/images/images/006/771/819/large/daka-dibuja-5-manana.jpg?1501127228")');
+  const [search, setSearch] = useState("")
+  
+  function addSearch(e) {
+    setSearch(e.target.value)
+  }
+
+  function citySearch() {
+
+    console.log(search)
+
+    if(search.trim() == ""){
+      alert("Invalido")
+    }
+    else {
+    const obterDataCity = async () => {
+
+      await fetch (`${process.env.REACT_APP_API_URL}/weather?q=${search}&appid=${process.env.REACT_APP_API_KEY}&units=metric&lang=pt_br`)
+        .then(response => response.json())
+        .then(data => {
+          setWeather(data)
+          console.log(data)
+        })
+    }
+    
+     obterDataCity()
+  }
+    }
 
   useEffect(() => {
     const obterData = async () => {
@@ -24,6 +51,7 @@ function LocalForecast() {
         });
     }
     obterData();
+    console.log(location)
   }, [location.latitude, location.longitude]);
 
   var data = new Date();
@@ -34,6 +62,10 @@ function LocalForecast() {
       {(typeof weather.main != 'undefined') ? ( //precisa disso para n dar erro de type ao carregar a página 
         //https://www.freecodecamp.org/news/learn-react-by-building-a-weather-app/
         <div className="container" style={{ 'backgroundImage': backgroundUrl }}>
+          <div className="search-bar">
+            <input value={search}  onChange={(e) => addSearch(e)} placeholder="Pesquise uma cidade"></input>
+            <button onClick={citySearch}>Pesquisar</button>
+          </div>
           <div className="box">
             <p className="main-location"> {weather.name}, {data.toLocaleDateString('pt-BR', options)}</p>
             <div>

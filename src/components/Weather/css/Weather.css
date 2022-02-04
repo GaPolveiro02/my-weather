@@ -11,8 +11,45 @@
     height: 100vh;
     width: 100VW;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3em;
+}
+
+.search-bar input  {
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+    width: 350px;
+    height: 37px;
+    border: none;
+    outline-style: none;
+    font-size: 15px;
+    text-align: center;
+}
+
+.search-bar button {
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.7);
+    border-top-right-radius: 3px;
+    font-size: 15px;
+    outline-style: none;
+    border: none;
+    height: 39px;
+    width: 100px;
+    transition: all 150ms ease-in;
+    
+}
+
+.search-bar button:hover {
+    background-color: white;
+    color: black;
 }
 
 .box {
