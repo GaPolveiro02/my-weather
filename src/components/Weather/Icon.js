@@ -1,4 +1,4 @@
-import { faCloud, faCloudRain, faBolt, faSun } from "@fortawesome/free-solid-svg-icons"
+import { faCloud, faCloudRain, faBolt, faSun, faSnowflake } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 const Icon = (props) => {
 
@@ -16,6 +16,11 @@ const Icon = (props) => {
         else if (id >= 300 && id <= 531) {
           return (
             <FontAwesomeIcon icon={faCloudRain}></FontAwesomeIcon>
+          )
+        }
+        else if(id >= 600 && id <=622) {
+          return (
+            <FontAwesomeIcon icon={faSnowflake}></FontAwesomeIcon>
           )
         }
         else if (id === 800) {
