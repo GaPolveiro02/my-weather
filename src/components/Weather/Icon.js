@@ -25,7 +25,7 @@ const Icon = (props) => {
         }
         else if (id === 800) {
           return (
-            <FontAwesomeIcon icon={faSun}></FontAwesomeIcon>
+            <FontAwesomeIcon icon={faSun} ></FontAwesomeIcon>
           )
         }
         else if (id >= 801 && id <= 804) {

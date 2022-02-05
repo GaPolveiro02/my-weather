@@ -260,6 +260,12 @@ h1 {
         transition: all 150ms ease-in;
     }
 
+    .search-bar button:hover {
+        background-color: white;
+        color: black;
+        cursor: pointer;
+    }
+
 
     .box {
         width: 100vw;
@@ -300,7 +306,7 @@ h1 {
     .second-info {
         display: flex;
         flex-direction: row;
-        padding-left: 50px;
+        padding-left: 40px;
         padding-top: 10px;
         font-size: 20px;
     }
