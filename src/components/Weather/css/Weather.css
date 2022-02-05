@@ -146,7 +146,7 @@
 }
 
 .weekForecast div {
-    margin: 16px;
+    margin: 20px;
     font-size: 1em;
     display: flex;
     justify-content: center;
@@ -213,10 +213,11 @@ h1 {
 
     .container {
         height: 100%;
-        width: 100vw;
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
+        overflow-x: hidden;
     }
 
     h1 {
