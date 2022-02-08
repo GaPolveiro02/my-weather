@@ -1,4 +1,4 @@
-import { faCloud, faCloudRain, faBolt, faSun, faSnowflake } from "@fortawesome/free-solid-svg-icons"
+import { faCloud, faCloudRain, faBolt, faSun, faSnowflake, faWind } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 const Icon = (props) => {
 
@@ -23,6 +23,11 @@ const Icon = (props) => {
             <FontAwesomeIcon icon={faSnowflake}></FontAwesomeIcon>
           )
         }
+        else if(id >= 701 && id <=781) {
+          return (
+            <FontAwesomeIcon icon={faWind}></FontAwesomeIcon>
+          )
+        }
         else if (id === 800) {
           return (
             <FontAwesomeIcon icon={faSun} ></FontAwesomeIcon>
@@ -34,7 +39,9 @@ const Icon = (props) => {
           )
         }
         else {
-          return "deu ruim"
+          return (
+            <><FontAwesomeIcon  icon={faCloud}></FontAwesomeIcon><span>?</span></>
+          )
         }
       }
 

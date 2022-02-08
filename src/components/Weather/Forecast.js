@@ -80,7 +80,7 @@ function Forecast() {
   return (
     <div>
       <div className="container" style={{ 'backgroundImage': backgroundUrl }}>
-        <a href="/"><h1>My Weather</h1></a>
+        <a href="/my-weather"><h1>My Weather</h1></a>
         <div className="search-bar">
           <input value={search} onChange={(e) => addSearch(e)} onKeyPress={(e) => handleKeyPress(e)} placeholder="Pesquise uma cidade"></input>
           <button onClick={citySearch} id="pesquisar">Pesquisar</button>
