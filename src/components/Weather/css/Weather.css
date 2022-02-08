@@ -67,9 +67,9 @@
 
 .main-info {
     font-size: 34px;
-    display: flex;
-    align-items: center;
-    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: 220px 60px 220px;
+    margin: 35px;
     animation: fade-in 2s normal forwards ease-in-out;
 }
 
@@ -107,7 +107,6 @@
     font-weight: bolder;
     font-style: italic;
     font-size: .8em;
-    white-space: nowrap;
 }
 
 #temps {
@@ -131,15 +130,12 @@
     font-style: italic;
 }
 
-.space {
-    width: 120px;
-}
-
 .weather-main {
     text-align: center;
 }
 
 .weekForecast {
+    margin: 15px;
     display: flex;
     flex-direction: row;
     animation: jump 1s normal forwards ease-in-out;
@@ -147,11 +143,11 @@
 
 .weekForecast div {
     margin: 20px;
-    font-size: 1em;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    width: -webkit-fill-available;
 }
 
 .links {
