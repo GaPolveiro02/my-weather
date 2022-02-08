@@ -8,23 +8,30 @@ import NotFound from "../../NotFound";
 
 function Forecast() {
 
-  const [location, setLocation] = useState({ latitude: 0, longitude: 0 })
-  const [weather, setWeather] = useState({})
-  const [backgroundUrl, setUrl] = useState('url("https://cdnb.artstation.com/p/assets/images/images/006/771/819/large/daka-dibuja-5-manana.jpg?1501127228")');
-  const [search, setSearch] = useState("")
+  const [location, setLocation] = useState({ latitude: 0, longitude: 0 });
+  const options = { weekday: 'long', day: 'numeric', month: 'short' };
+  const [backgroundUrl, setUrl] = useState('');
+  const [weather, setWeather] = useState({});
+  const [search, setSearch] = useState("");
   const [cod, setCod] = useState()
-
+  const data = new Date();
+  
+  //Função pra pegar valor do input
   function addSearch(e) {
     setSearch(e.target.value)
   }
-
+  
+  //
   function handleKeyPress(e) {
-    if (e.key === "Enter") citySearch();
+    if (e.key === "Enter") {
+      citySearch()
+    }
   }
 
+  //Função pra retornar o clima da pesquisa
   function citySearch() {
 
-    //console.log(search)
+    console.log("valor pesquisado foi", search)
 
     if (search.trim() === "") {
       alert("Invalido")
@@ -36,27 +43,33 @@ function Forecast() {
           .then(response => response.json())
           .then(
             (data => {
+
               setWeather(data)
               //console.log(data.cod)
               setCod(data.cod)
+
             }));
       }
+
       obterDataCity()
+
       if (cod === 200) {
           var main = document.querySelector(".main-info");
           var week = document.querySelector(".weekForecast");
           main.style.animation = "none";
           week.style.animation = "none";
-          setTimeout(function () {
+          setTimeout(() => {
+
             main.style.animation = "";
             week.style.animation = "";
+
           }, 100);
         }
     }
   }
 
     
-
+  //Função que faz a requisição dos dados da API
   useEffect(() => {
     const obterData = async () => {
       navigator.geolocation.watchPosition(function (local) {
@@ -65,17 +78,17 @@ function Forecast() {
       setUrl(setBackground());
       await fetch(`${process.env.REACT_APP_API_URL}/weather?lat=${location.latitude}&lon=${location.longitude}&appid=${process.env.REACT_APP_API_KEY}&units=metric&lang=pt_br`)
         .then(response => response.json())
-        .then(data => {
+         .then(data => {
           setWeather(data)
           //console.log(data)
         });
     }
     obterData();
     //console.log(location)
-  }, [location]);
 
-  var data = new Date();
-  var options = { weekday: 'long', day: 'numeric', month: 'short' };
+    //Condição useEffect vai ser acionado sempre que latitude/longitude mudar
+  }, [location.latitude, location.longitude]);
+
 
   return (
     <div>
